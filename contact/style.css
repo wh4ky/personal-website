@@ -1,0 +1,15 @@
+.content {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+}
+
+.code {
+  font-family: Hack, monospace;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  border-color: darkgray;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+}

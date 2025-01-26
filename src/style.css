@@ -1,0 +1,77 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: black;
+  color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: white;
+}
+
+.icon {
+  width: 2em;
+}
+
+#age {
+  font-family: Hack, monospace;
+}
+
+#pfp {
+  width: 20vh;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 50vh;
+}
+
+.main>p {
+  margin: 0;
+  padding: 0 1em 0 1em;
+}
+
+header {
+  background-color: gray;
+  display: flex;
+  margin: 0.5em;
+  border-radius: 2px;
+}
+
+header>div {
+  padding: 1em;
+}
+
+header>.spacer {
+  margin-left: auto;
+}
+
+/* wanneer hover over pfp dan naam en de aka shit daar waar link staat */
+
+footer {
+  width: 100%;
+  font-size: 0.5em;
+  position: absolute;
+  bottom: 0;
+  color: darkgray;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: center;
+}
+
+footer>div {
+  margin: 1em;
+}
