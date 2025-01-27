@@ -1,15 +1,17 @@
+/* Content grid. */
 .content {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: left;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1em;
 }
 
-.code {
-  font-family: Hack, monospace;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  border-color: darkgray;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 2px;
+/* Class for all icons. */
+.icon {
+  width: 2em;
+  margin: .5em;
+}
+
+/* For the links.  */
+.main>.content>a {
+  color: white;
 }

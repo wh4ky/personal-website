@@ -1,30 +1,61 @@
 var headerElement: HTMLElement = document.querySelector("header") as HTMLElement;
 var footerElement: HTMLElement = document.querySelector("footer") as HTMLElement;
 
-headerElement.innerHTML = `
-    <div><a href="/">Home</a></div>
-    <div><a href="/contact/">Contact</a></div>
-    <div><a href="/blog/">Blog</a></div>
-`;
+assembleHeader(headerElement);
+assembleFooter(footerElement);
 
-footerElement.innerHTML = `
-    <div class="title">Honorable peeps:</div>
+function assembleHeader(header: HTMLElement): void {
+  const data = [
+    { href: '/', text: 'Home' },
+    { href: '/contact/', text: 'Contact' },
+    { href: '/blog/', text: 'Blog' }
+  ];
 
-    <div class="item" title="MY FUCKING SIS, LET'S FUCKING GET IT YO">
-      <a href="https://prpl.wtf/">
-        <p>Emma</p>
-      </a>
-    </div>
+  const fragment = document.createDocumentFragment();
 
-    <div class="item" title="MY FUCKING G, MY BOY FOR FUCKING LIFE">
-      <a href="https://jswdev.nl/">
-        <p>JSW</p>
-      </a>
-    </div>
+  data.forEach(link => {
+    var newElem: HTMLAnchorElement = document.createElement('a');
+    newElem.href = link.href;
+    newElem.textContent = link.text;
 
-    <div class="item" title="THE FUCKING DOLPHIN, MY BOY FOR REAL">
-      <a href="https://geen-dolfijn.nl/">
-        <p>Definitely-Not-A-Dolphin</p>
-      </a>
-    </div>
-`;
+    fragment.appendChild(newElem);
+  });
+
+  header.appendChild(fragment);
+  return;
+}
+
+function assembleFooter(footer: HTMLElement) {
+  const data = [
+    { href: 'https://prpl.wtf/', divTitle: `MY FUCKING SIS, LET'S FUCKING GET IT YO`, divText: 'Emma' },
+    { href: 'https://jswdev.nl/', divTitle: `MY FUCKING G, MY BOY FOR FUCKING LIFE`, divText: 'JSW' },
+    { href: 'https://geen-dolfijn.nl/', divTitle: `THE FUCKING DOLPHIN, MY BOY FOR REAL`, divText: 'Definitely-Not-A-Dolphin' }
+  ];
+
+  const fragment = document.createDocumentFragment();
+
+  {
+    var titlediv: HTMLDivElement = document.createElement('div');
+    titlediv.className = "title";
+    titlediv.textContent = "Honorable peeps:";
+    fragment.appendChild(titlediv);
+  }
+
+  data.forEach(link => {
+    var newElem: HTMLAnchorElement = document.createElement('a');
+    var elemInner: HTMLDivElement = document.createElement('div');
+
+    newElem.href = link.href;
+
+    elemInner.className = "item";
+    elemInner.title = link.divTitle;
+    elemInner.textContent = link.divText;
+
+    newElem.appendChild(elemInner);
+    fragment.appendChild(newElem)
+  });
+
+  footer.appendChild(fragment);
+  return;
+}
+
