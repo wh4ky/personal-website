@@ -3,6 +3,8 @@
   background-color: black;
   color: white;
 
+  color-scheme: only dark;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

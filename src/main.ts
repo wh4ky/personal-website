@@ -22,7 +22,7 @@ footerElement.innerHTML = `
       </a>
     </div>
 
-    <div class="item" title="THE FUCKING DOLPHIN, MY FUCKING BOY">
+    <div class="item" title="THE FUCKING DOLPHIN, MY BOY FOR REAL">
       <a href="https://geen-dolfijn.nl/">
         <p>Definitely-Not-A-Dolphin</p>
       </a>
