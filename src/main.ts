@@ -1,10 +1,23 @@
-var headerElement: HTMLElement = document.querySelector("header") as HTMLElement;
-var footerElement: HTMLElement = document.querySelector("footer") as HTMLElement;
+const loadingIndicator = document.getElementById("loading") as HTMLElement;
+loadingIndicator.classList.add("show");
 
-assembleHeader(headerElement);
-assembleFooter(footerElement);
+document.addEventListener("DOMContentLoaded", () => {
+  const headerElement: HTMLElement = document.querySelector("header") as HTMLElement;
+  const footerElement: HTMLElement = document.querySelector("footer") as HTMLElement;
 
-function assembleHeader(header: HTMLElement): void {
+  requestAnimationFrame(async () => {
+    await assembleHeader(headerElement);
+    await assembleFooter(footerElement);
+
+    // Hide the loading indicator after content is loaded
+    loadingIndicator.classList.remove("show");
+  });
+});
+
+
+// DOM(MY) MANIPULATION FUNCTIONS //
+
+async function assembleHeader(header: HTMLElement) {
   const data = [
     { href: '/', text: 'Home' },
     { href: '/contact/', text: 'Contact' },
@@ -25,7 +38,7 @@ function assembleHeader(header: HTMLElement): void {
   return;
 }
 
-function assembleFooter(footer: HTMLElement) {
+async function assembleFooter(footer: HTMLElement) {
   const data = [
     { href: 'https://prpl.wtf/', divTitle: `MY FUCKING SIS, LET'S FUCKING GET IT YO`, divText: 'Emma' },
     { href: 'https://jswdev.nl/', divTitle: `MY FUCKING G, MY BOY FOR FUCKING LIFE`, divText: 'JSW' },
