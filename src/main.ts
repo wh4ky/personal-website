@@ -1,6 +1,3 @@
-const loadingIndicator = document.getElementById("loading") as HTMLElement;
-loadingIndicator.classList.add("show");
-
 document.addEventListener("DOMContentLoaded", () => {
   const headerElement: HTMLElement = document.querySelector("header") as HTMLElement;
   const footerElement: HTMLElement = document.querySelector("footer") as HTMLElement;
@@ -8,9 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   requestAnimationFrame(async () => {
     await assembleHeader(headerElement);
     await assembleFooter(footerElement);
-
-    // Hide the loading indicator after content is loaded
-    loadingIndicator.classList.remove("show");
   });
 });
 
