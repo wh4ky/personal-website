@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // DOM(MY) MANIPULATION FUNCTIONS //
 
 async function assembleHeader(header: HTMLElement) {
-  const headerData = [
+  const headerData: Array<{ href: string, text: string }> = [
     { href: '/', text: 'Home' },
     { href: '/contact/', text: 'Contact' },
-  ] as { href: string, text: string }[];
+  ];
 
   const fragment = document.createDocumentFragment();
 
@@ -30,10 +30,10 @@ async function assembleHeader(header: HTMLElement) {
 }
 
 async function assembleFooter(footer: HTMLElement) {
-  const footerData = [
-    { href: 'https://prpl.wtf/', divTitle: `MY FUCKING SIS, LET'S FUCKING GET IT YO`, divText: 'Emma' },
-    { href: 'https://jswdev.nl/', divTitle: `MY FUCKING G, MY BOY FOR FUCKING LIFE`, divText: 'JSW' },
-    { href: 'https://geen-dolfijn.nl/', divTitle: `THE FUCKING DOLPHIN, MY BOY FOR REAL`, divText: 'Definitely-Not-A-Dolphin' }
+  const footerData: Array<{ website: string, title: string, text: string }> = [
+    { website: 'https://prpl.wtf/', title: `MY FUCKING SIS, LET'S FUCKING GET IT YO`, text: 'Emma' },
+    { website: 'https://jswdev.nl/', title: `MY FUCKING G, MY BOY FOR FUCKING LIFE`, text: 'JSW' },
+    { website: 'https://geen-dolfijn.nl/', title: `THE FUCKING DOLPHIN, MY BOY FOR REAL`, text: 'Definitely-Not-A-Dolphin' }
   ];
 
   const fragment = document.createDocumentFragment();
@@ -46,17 +46,17 @@ async function assembleFooter(footer: HTMLElement) {
   }
 
   for (const group of footerData) {
-    var newElem: HTMLAnchorElement = document.createElement('a');
-    var elemInner: HTMLDivElement = document.createElement('div');
+    var anchor: HTMLAnchorElement = document.createElement('a');
+    var div: HTMLDivElement = document.createElement('div');
 
-    newElem.href = group.href;
+    anchor.href = group.website;
 
-    elemInner.className = "item";
-    elemInner.title = group.divTitle;
-    elemInner.textContent = group.divText;
+    div.className = "item";
+    div.title = group.title;
+    div.textContent = group.text;
 
-    newElem.appendChild(elemInner);
-    fragment.appendChild(newElem)
+    anchor.appendChild(div);
+    fragment.appendChild(anchor)
   }
 
   footer.appendChild(fragment);

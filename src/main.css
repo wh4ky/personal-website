@@ -73,7 +73,7 @@ header>*:hover {
 /* Stuff on the bottom of the page. */
 footer {
   width: 100%;
-  font-size: 0.5em;
+  font-size: .8em;
   position: absolute;
   bottom: 0;
   color: darkgray;

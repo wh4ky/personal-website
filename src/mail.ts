@@ -5,14 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const subject = document.getElementById("subject") as HTMLInputElement;
   const body = document.getElementById("body") as HTMLInputElement;
 
+  const at: string = "@";
+
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     // debug
-    alert(`${encodeURI(subject.value)} | WITH | ${encodeURI(body.value)}`);
+    // alert(`${encodeURI(subject.value)} | WITH | ${encodeURI(body.value)}`);
 
     window.location.href = `
-      mailto:damian.whacky@proton.me
+      mailto:damian.whacky${at}proton.me
       ?subject=${encodeURI(subject.value)}
       &body=${encodeURI(body.value)}
     `;
