@@ -13,6 +13,7 @@ async function assembleHeader(header: HTMLElement) {
   const headerData: Array<{ href: string, text: string }> = [
     { href: '/', text: 'Home' },
     { href: '/contact/', text: 'Contact' },
+    { href: '/specs/', text: 'Specs' },
   ];
 
   const fragment = document.createDocumentFragment();

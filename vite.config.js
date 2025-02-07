@@ -8,6 +8,7 @@ export default defineConfig({
         main: "./index.html",
         contact: "./contact/index.html",
         mail: "./mail/index.html",
+        specs: "./specs/index.html",
       },
     },
   },
