@@ -1,39 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const headerElement: HTMLElement = document.querySelector("header") as HTMLElement;
-  const footerElement: HTMLElement = document.querySelector("footer") as HTMLElement;
+  const headerElement = document.querySelector("header") as HTMLElement;
+  const footerElement = document.querySelector("footer") as HTMLElement;
 
-  requestAnimationFrame(async () => {
-    await assembleHeader(headerElement);
-    await assembleFooter(footerElement);
-  });
+  assembleHeader(headerElement);
+  assembleFooter(footerElement);
 });
 
 
 // DOM(MY) MANIPULATION FUNCTIONS //
 
 async function assembleHeader(header: HTMLElement) {
-  const data = [
+  const headerData = [
     { href: '/', text: 'Home' },
     { href: '/contact/', text: 'Contact' },
-    { href: '/blog/', text: 'Blog' }
-  ];
+  ] as { href: string, text: string }[];
 
   const fragment = document.createDocumentFragment();
 
-  data.forEach(link => {
+  for (const group of headerData) {
     var newElem: HTMLAnchorElement = document.createElement('a');
-    newElem.href = link.href;
-    newElem.textContent = link.text;
+    newElem.href = group.href;
+    newElem.textContent = group.text;
 
     fragment.appendChild(newElem);
-  });
+  }
 
   header.appendChild(fragment);
   return;
 }
 
 async function assembleFooter(footer: HTMLElement) {
-  const data = [
+  const footerData = [
     { href: 'https://prpl.wtf/', divTitle: `MY FUCKING SIS, LET'S FUCKING GET IT YO`, divText: 'Emma' },
     { href: 'https://jswdev.nl/', divTitle: `MY FUCKING G, MY BOY FOR FUCKING LIFE`, divText: 'JSW' },
     { href: 'https://geen-dolfijn.nl/', divTitle: `THE FUCKING DOLPHIN, MY BOY FOR REAL`, divText: 'Definitely-Not-A-Dolphin' }
@@ -48,19 +45,19 @@ async function assembleFooter(footer: HTMLElement) {
     fragment.appendChild(titlediv);
   }
 
-  data.forEach(link => {
+  for (const group of footerData) {
     var newElem: HTMLAnchorElement = document.createElement('a');
     var elemInner: HTMLDivElement = document.createElement('div');
 
-    newElem.href = link.href;
+    newElem.href = group.href;
 
     elemInner.className = "item";
-    elemInner.title = link.divTitle;
-    elemInner.textContent = link.divText;
+    elemInner.title = group.divTitle;
+    elemInner.textContent = group.divText;
 
     newElem.appendChild(elemInner);
     fragment.appendChild(newElem)
-  });
+  }
 
   footer.appendChild(fragment);
   return;

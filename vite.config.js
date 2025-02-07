@@ -6,8 +6,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "./index.html",
-        about: "./blog/index.html",
         contact: "./contact/index.html",
+        mail: "./mail/index.html",
       },
     },
   },
