@@ -1,10 +1,19 @@
-@import url("https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css");
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: dark --default;
+}
+
+@plugin "@iconify/tailwind4" {
+  prefix: mdi, material-symbols, lineicons;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: black;
-  color: white;
-
   color-scheme: only dark;
 
   font-synthesis: none;
@@ -15,79 +24,4 @@
 
 body {
   margin: 0;
-}
-
-/* For code, or just some markup. */
-.codeInline {
-  font-family: Hack, monospace;
-  border-color: darkgray;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 2px;
-}
-
-.codeBlock {
-  font-family: Hack, monospace;
-  border-color: darkgray;
-  padding: 1em;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 2px;
-}
-
-/* Header bar style. */
-header {
-  background-color: gray;
-  display: flex;
-  margin: 0.5em;
-  margin-bottom: 1em;
-  border-radius: 2px;
-}
-
-header>* {
-  color: white;
-  padding: 0.5em;
-  margin: 0.5em;
-  border-radius: 2px;
-}
-
-header>*:hover {
-  transition: .5s ease;
-  background-color: white;
-  color: black;
-  padding: 0.3em;
-  font-size: 1.1em;
-}
-
-/* Stuff on the bottom of the page. */
-footer {
-  width: 100%;
-  font-size: .8em;
-  position: fixed;
-  bottom: 0;
-  color: darkgray;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: left;
-  align-items: center;
-}
-
-footer>* {
-  color: white;
-  margin: 1em;
-}
-
-/* Main content default style.  */
-.main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
-
-.main>* {
-  margin: 0;
-  padding: 0 1em 0 1em;
 }

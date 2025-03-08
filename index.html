@@ -6,25 +6,118 @@
   <link rel="icon" type="image/ico" href="/images/skull_pfp.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/src/main.css" />
-  <link rel="stylesheet" href="/src/style.css" />
-  <title>Whacky | Home</title>
+  <title>Whacky | About</title>
 </head>
 
 <body>
-  <header></header>
-  <script type="module" src="/src/main.ts"></script>
   <script type="module" src="/src/age.ts"></script>
+  <script type="module" src="/src/github.ts"></script>
 
-  <div class="main">
-    <img id="pfp" src="/images/skull_pfp.webp" alt="my profile picture">
-    </img>
-    <p>My name is <b>Damian Czapnik (aka whacky)</b> and I'm <b class="codeInline" id="age">x</b> years old.</p>
-    <p>I hate JS frameworks with every fiber of my being,
-      that's why this website is made with HTML, CSS and has some TS slapped on for good measure.</p>
-    <p>See the header for other pages, and the footer for the honorable peeps.</p>
+  <!-- INTRO HERO -->
+  <div class="hero bg-linear-to-b from-base-300 from-75% to-base-100 min-h-screen">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <figure>
+        <img class="avatar rounded-full w-60 ring-primary ring-offset-base-100 w-24 rounded-full ring ring-offset-2"
+          src="/images/skull_pfp.webp" alt="my profile picture"></img>
+      </figure>
+
+      <div class="text-primary-content">
+        <h2 class="text-3xl font-bold text-primary mb-5">Damian Czapnik
+          <div class="badge badge-info ml-3">HIM</div>
+        </h2>
+        <h3 class="text-md">aka <b class="text-xl">Whacky</b></h3>
+        <p>I am <b id="age">xx.xxxxxxxx</b> years old.</p>
+        <br />
+        <li>💼 I currently know a few programming languages, like: C and Zig.</li>
+        <li>🌱 Currently learning Zig (Zigmaxxing). I also want to learn Lua in the future.</li>
+        <li>❤️ I love systems-level programming and the segfaults that come with it! </li>
+        <li>💬 Ask me anything <a href="https://github.com/wh4ky/wh4ky/issues" class="text-info">here</a>.</li>
+      </div>
+    </div>
   </div>
+  <div class="my-[10vh]"> </div>
 
-  <footer></footer>
+  <!-- GITHUB PROJECTS -->
+  <div class="flex justify-center min-w-screen">
+    <div id="projects" class="carousel carousel-center rounded-box space-x-4 p-4 min-w-screen">
+    </div>
+  </div>
+  <div class="my-[25vh]"> </div>
+
+  <!-- COMPUTER SPECS -->
+  <div>
+    <div class="grid grid-cols-2 items-center">
+      <div class="justify-self-center mockup-code w-5/6">
+        <pre data-prefix="~"><code>OS: Artix Linux x86_64</code></pre>
+        <pre data-prefix="~"><code>Shell: zsh</code></pre>
+        <pre data-prefix="~"><code>WM: Hyprland (Wayland)</code></pre>
+        <pre data-prefix="~"><code>Terminal: Alacritty </code></pre>
+        <pre data-prefix="~"><code>CPU: Intel(R) Core(TM) I5-4570 (4c4t) @ 3.60 GHz</code></pre>
+        <pre data-prefix="~"><code>GPU: AMD Radeon RX 5700 XT</code></pre>
+        <pre data-prefix="~"><code>memory: 8 Gb + 2 Gb DDR3</code></pre>
+      </div>
+      <div class="justify-self-center align-middle">
+        <h1 class="text-3xl font-bold">Phi - Desktop</h1>
+      </div>
+    </div>
+
+    <div class="m-10"></div>
+
+    <div class="grid grid-cols-2 items-center">
+      <div class="justify-self-center align-middle">
+        <h1 class="text-3xl font-bold">MacBook - Laptop</h1>
+      </div>
+      <div class="justify-self-center mockup-code w-5/6">
+        <pre data-prefix="~"><code>OS: MacOS</code></pre>
+        <pre data-prefix="~"><code>Shell: zsh</code></pre>
+        <pre data-prefix="~"><code>WM: Quartz Compositor</code></pre>
+        <pre data-prefix="~"><code>Terminal: iTerm2</code></pre>
+        <pre data-prefix="~"><code>CPU: Apple M1 Pro</code></pre>
+        <pre data-prefix="~"><code>GPU: Apple M1 Pro</code></pre>
+        <pre data-prefix="~"><code>Memory: 16 Gb LPDDR5</code></pre>
+
+      </div>
+    </div>
+
+    <div class="m-20"></div>
+  </div>
+  <div class="my-[25vh]"> </div>
+
+  <!-- BOTTOM FOOTER -->
+  <footer
+    class="footer sm:footer-horizontal bg-linear-to-b from-base-100 from-1% to-base-300 text-neutral-content items-center p-5">
+    <nav class="grid-flow-col items-center">
+      <h6 class="footer-title">Frien</h6>
+      <div class="tooltip w-11" data-tip="Emma">
+        <img class="avatar rounded-full"
+          src="https://raw.githubusercontent.com/prplwtf/circles/refs/heads/main/emma-base.jpg" />
+      </div>
+      <div class="tooltip w-11" data-tip="JSW">
+        <img class="avatar rounded-full" src="https://avatars.githubusercontent.com/u/46420489?v=4" />
+      </div>
+      <div class="tooltip w-11" data-tip="Definately not a Dolphin">
+        <img class="avatar rounded-full" src="https://avatars.githubusercontent.com/u/158269354?v=4" />
+      </div>
+    </nav>
+    <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end text-2xl">
+      <a class="tooltip" data-tip="Signal" href="https://signal.me/#@whacky.08">
+        <span class="iconify icon-[lineicons--signal-app]"></span>
+      </a>
+      <a class="tooltip" data-tip="E-mail" href="mailto:damian.whacky@proton.me">
+        <span class="iconify icon-[mdi--email]"></span>
+      </a>
+      <a class="tooltip" data-tip="GitHub" href="https://github.com/wh4ky/">
+        <span class="iconify icon-[mdi--github]"></span>
+      </a>
+      <a class="tooltip" data-tip="Discord" href="https://discord.com/users/663014201345835053">
+        <span class="iconify icon-[mdi--discord]"></span>
+      </a>
+      <a class="tooltip" data-tip="Last.fm" href="https://www.last.fm/user/whackydev">
+        <span class="iconify icon-[mdi--lastfm]"></span>
+      </a>
+    </nav>
+  </footer>
+
 </body>
 
 </html>

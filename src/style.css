@@ -1,9 +1,0 @@
-/* Main profile picture ID */
-#pfp {
-  width: 20vh;
-  border-radius: 50%;
-}
-
-#pfp:hover {
-  opacity: 80%;
-}
