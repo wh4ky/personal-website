@@ -1,3 +1,4 @@
+// @ts-ignore
 import * as env from "../env.ts";
 
 document.addEventListener("DOMContentLoaded", () => {
