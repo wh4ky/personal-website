@@ -1,6 +1,3 @@
-// @ts-ignore
-import * as env from "../env.ts";
-
 document.addEventListener("DOMContentLoaded", () => {
   const githubProjectsElement = document.getElementById("projects") as HTMLDivElement;
   assemble(githubProjectsElement);
@@ -121,11 +118,9 @@ async function assemble(div: HTMLDivElement) {
   const headers: Headers = new Headers();
   headers.append("Accept", "application/vnd.github+json");
 
-  // @ts-expect-error
-  if (env.GITHUB_TOKEN != null) {
+  if (import.meta.env.MODE === "development") {
     console.log("Fetching data authorised with provided token!");
-    // @ts-expect-error
-    headers.append("Authorization", `Bearer ${env.GITHUB_TOKEN}`);
+    headers.append("Authorization", `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`);
   }
 
   const resp = await fetch(new URL(`${baseURL}/users/wh4ky/repos`), { headers: headers });
